@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,16 @@ namespace KutuphaneV1.DataAccess
 
 
 
+        }
+
+        public DataTable YazarListele() {
+            String sorgu="SELECT * FROM yazarlar";
+            MySqlCommand komut=new MySqlCommand(sorgu,_context.conn());
+            MySqlDataAdapter da=new MySqlDataAdapter(komut);
+            DataTable dt=new DataTable();
+            da.Fill(dt);
+            _context.conn().Close();
+            return dt;
         }
     }
 }

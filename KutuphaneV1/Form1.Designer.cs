@@ -43,21 +43,21 @@
             this.btnKitapGuncelle = new System.Windows.Forms.Button();
             this.btnKitapEkle = new System.Windows.Forms.Button();
             this.tbYazar = new System.Windows.Forms.TabPage();
+            this.dtgYazarlar = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnYazarSil = new System.Windows.Forms.Button();
+            this.btnYazarGuncelle = new System.Windows.Forms.Button();
+            this.btnYazarEkle = new System.Windows.Forms.Button();
             this.tbKategori = new System.Windows.Forms.TabPage();
             this.tbKullanici = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnYazarEkle = new System.Windows.Forms.Button();
-            this.btnYazarGuncelle = new System.Windows.Forms.Button();
-            this.btnYazarSil = new System.Windows.Forms.Button();
-            this.dtgYazarlar = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tbKitap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgKitaplar)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tbYazar.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgYazarlar)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -70,9 +70,10 @@
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tabControl1.ItemSize = new System.Drawing.Size(200, 50);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1575, 688);
+            this.tabControl1.Size = new System.Drawing.Size(1181, 559);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
@@ -81,23 +82,29 @@
             this.tbKitap.Controls.Add(this.dtgKitaplar);
             this.tbKitap.Controls.Add(this.panel1);
             this.tbKitap.Location = new System.Drawing.Point(4, 54);
+            this.tbKitap.Margin = new System.Windows.Forms.Padding(2);
             this.tbKitap.Name = "tbKitap";
-            this.tbKitap.Padding = new System.Windows.Forms.Padding(3);
-            this.tbKitap.Size = new System.Drawing.Size(1567, 630);
+            this.tbKitap.Padding = new System.Windows.Forms.Padding(2);
+            this.tbKitap.Size = new System.Drawing.Size(1173, 501);
             this.tbKitap.TabIndex = 0;
             this.tbKitap.Text = "Kitap Yönetimi";
             this.tbKitap.UseVisualStyleBackColor = true;
             // 
             // dtgKitaplar
             // 
+            this.dtgKitaplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgKitaplar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgKitaplar.Location = new System.Drawing.Point(3, 85);
+            this.dtgKitaplar.Location = new System.Drawing.Point(2, 69);
+            this.dtgKitaplar.Margin = new System.Windows.Forms.Padding(2);
             this.dtgKitaplar.Name = "dtgKitaplar";
+            this.dtgKitaplar.ReadOnly = true;
             this.dtgKitaplar.RowHeadersWidth = 51;
             this.dtgKitaplar.RowTemplate.Height = 24;
-            this.dtgKitaplar.Size = new System.Drawing.Size(1561, 542);
+            this.dtgKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgKitaplar.Size = new System.Drawing.Size(1169, 430);
             this.dtgKitaplar.TabIndex = 1;
+            this.dtgKitaplar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgKitaplar_CellContentClick);
             // 
             // panel1
             // 
@@ -107,9 +114,10 @@
             this.panel1.Controls.Add(this.btnKitapGuncelle);
             this.panel1.Controls.Add(this.btnKitapEkle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1561, 82);
+            this.panel1.Size = new System.Drawing.Size(1169, 67);
             this.panel1.TabIndex = 0;
             // 
             // groupBox1
@@ -121,43 +129,49 @@
             this.groupBox1.Controls.Add(this.rbYazar);
             this.groupBox1.Controls.Add(this.rbKitap);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(654, 0);
+            this.groupBox1.Location = new System.Drawing.Point(490, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(907, 82);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(679, 67);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listeleme | Arama";
             // 
             // btnAra
             // 
-            this.btnAra.Location = new System.Drawing.Point(765, 44);
+            this.btnAra.Location = new System.Drawing.Point(574, 36);
+            this.btnAra.Margin = new System.Windows.Forms.Padding(2);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(75, 32);
+            this.btnAra.Size = new System.Drawing.Size(56, 26);
             this.btnAra.TabIndex = 5;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = true;
             // 
             // txtAra
             // 
-            this.txtAra.Location = new System.Drawing.Point(609, 47);
+            this.txtAra.Location = new System.Drawing.Point(457, 38);
+            this.txtAra.Margin = new System.Windows.Forms.Padding(2);
             this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(149, 26);
+            this.txtAra.Size = new System.Drawing.Size(113, 23);
             this.txtAra.TabIndex = 4;
             // 
             // cbSec
             // 
             this.cbSec.FormattingEnabled = true;
-            this.cbSec.Location = new System.Drawing.Point(444, 45);
+            this.cbSec.Location = new System.Drawing.Point(333, 37);
+            this.cbSec.Margin = new System.Windows.Forms.Padding(2);
             this.cbSec.Name = "cbSec";
-            this.cbSec.Size = new System.Drawing.Size(159, 28);
+            this.cbSec.Size = new System.Drawing.Size(120, 24);
             this.cbSec.TabIndex = 3;
             // 
             // rbKategori
             // 
             this.rbKategori.AutoSize = true;
-            this.rbKategori.Location = new System.Drawing.Point(303, 44);
+            this.rbKategori.Location = new System.Drawing.Point(227, 36);
+            this.rbKategori.Margin = new System.Windows.Forms.Padding(2);
             this.rbKategori.Name = "rbKategori";
-            this.rbKategori.Size = new System.Drawing.Size(135, 24);
+            this.rbKategori.Size = new System.Drawing.Size(119, 21);
             this.rbKategori.TabIndex = 2;
             this.rbKategori.TabStop = true;
             this.rbKategori.Text = "Türüne Göre";
@@ -166,9 +180,10 @@
             // rbYazar
             // 
             this.rbYazar.AutoSize = true;
-            this.rbYazar.Location = new System.Drawing.Point(159, 44);
+            this.rbYazar.Location = new System.Drawing.Point(119, 36);
+            this.rbYazar.Margin = new System.Windows.Forms.Padding(2);
             this.rbYazar.Name = "rbYazar";
-            this.rbYazar.Size = new System.Drawing.Size(135, 24);
+            this.rbYazar.Size = new System.Drawing.Size(118, 21);
             this.rbYazar.TabIndex = 1;
             this.rbYazar.TabStop = true;
             this.rbYazar.Text = "Yazara Göre";
@@ -177,9 +192,10 @@
             // rbKitap
             // 
             this.rbKitap.AutoSize = true;
-            this.rbKitap.Location = new System.Drawing.Point(27, 44);
+            this.rbKitap.Location = new System.Drawing.Point(20, 36);
+            this.rbKitap.Margin = new System.Windows.Forms.Padding(2);
             this.rbKitap.Name = "rbKitap";
-            this.rbKitap.Size = new System.Drawing.Size(120, 24);
+            this.rbKitap.Size = new System.Drawing.Size(104, 21);
             this.rbKitap.TabIndex = 0;
             this.rbKitap.TabStop = true;
             this.rbKitap.Text = "Kitap Göre";
@@ -188,9 +204,10 @@
             // btnKitapSil
             // 
             this.btnKitapSil.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnKitapSil.Location = new System.Drawing.Point(440, 0);
+            this.btnKitapSil.Location = new System.Drawing.Point(330, 0);
+            this.btnKitapSil.Margin = new System.Windows.Forms.Padding(2);
             this.btnKitapSil.Name = "btnKitapSil";
-            this.btnKitapSil.Size = new System.Drawing.Size(214, 82);
+            this.btnKitapSil.Size = new System.Drawing.Size(160, 67);
             this.btnKitapSil.TabIndex = 2;
             this.btnKitapSil.Text = "Seçili Kaydı Sil";
             this.btnKitapSil.UseVisualStyleBackColor = true;
@@ -198,9 +215,10 @@
             // btnKitapGuncelle
             // 
             this.btnKitapGuncelle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnKitapGuncelle.Location = new System.Drawing.Point(225, 0);
+            this.btnKitapGuncelle.Location = new System.Drawing.Point(169, 0);
+            this.btnKitapGuncelle.Margin = new System.Windows.Forms.Padding(2);
             this.btnKitapGuncelle.Name = "btnKitapGuncelle";
-            this.btnKitapGuncelle.Size = new System.Drawing.Size(215, 82);
+            this.btnKitapGuncelle.Size = new System.Drawing.Size(161, 67);
             this.btnKitapGuncelle.TabIndex = 1;
             this.btnKitapGuncelle.Text = "Seçili Kaydı Güncelle";
             this.btnKitapGuncelle.UseVisualStyleBackColor = true;
@@ -209,8 +227,9 @@
             // 
             this.btnKitapEkle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnKitapEkle.Location = new System.Drawing.Point(0, 0);
+            this.btnKitapEkle.Margin = new System.Windows.Forms.Padding(2);
             this.btnKitapEkle.Name = "btnKitapEkle";
-            this.btnKitapEkle.Size = new System.Drawing.Size(225, 82);
+            this.btnKitapEkle.Size = new System.Drawing.Size(169, 67);
             this.btnKitapEkle.TabIndex = 0;
             this.btnKitapEkle.Text = "Yeni Kitap Ekle";
             this.btnKitapEkle.UseVisualStyleBackColor = true;
@@ -221,30 +240,27 @@
             this.tbYazar.Controls.Add(this.dtgYazarlar);
             this.tbYazar.Controls.Add(this.panel2);
             this.tbYazar.Location = new System.Drawing.Point(4, 54);
+            this.tbYazar.Margin = new System.Windows.Forms.Padding(2);
             this.tbYazar.Name = "tbYazar";
-            this.tbYazar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbYazar.Size = new System.Drawing.Size(1567, 630);
+            this.tbYazar.Padding = new System.Windows.Forms.Padding(2);
+            this.tbYazar.Size = new System.Drawing.Size(1173, 501);
             this.tbYazar.TabIndex = 1;
             this.tbYazar.Text = "Yazar Yönetimi";
             this.tbYazar.UseVisualStyleBackColor = true;
             // 
-            // tbKategori
+            // dtgYazarlar
             // 
-            this.tbKategori.Location = new System.Drawing.Point(4, 54);
-            this.tbKategori.Name = "tbKategori";
-            this.tbKategori.Size = new System.Drawing.Size(1567, 630);
-            this.tbKategori.TabIndex = 2;
-            this.tbKategori.Text = "Kategori Yönetimi";
-            this.tbKategori.UseVisualStyleBackColor = true;
-            // 
-            // tbKullanici
-            // 
-            this.tbKullanici.Location = new System.Drawing.Point(4, 54);
-            this.tbKullanici.Name = "tbKullanici";
-            this.tbKullanici.Size = new System.Drawing.Size(1567, 630);
-            this.tbKullanici.TabIndex = 3;
-            this.tbKullanici.Text = "Kullanıcı Yönetimi";
-            this.tbKullanici.UseVisualStyleBackColor = true;
+            this.dtgYazarlar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgYazarlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgYazarlar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgYazarlar.Location = new System.Drawing.Point(2, 69);
+            this.dtgYazarlar.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgYazarlar.Name = "dtgYazarlar";
+            this.dtgYazarlar.RowHeadersWidth = 51;
+            this.dtgYazarlar.RowTemplate.Height = 24;
+            this.dtgYazarlar.Size = new System.Drawing.Size(1169, 430);
+            this.dtgYazarlar.TabIndex = 1;
+            this.dtgYazarlar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgYazarlar_CellContentClick);
             // 
             // panel2
             // 
@@ -253,61 +269,76 @@
             this.panel2.Controls.Add(this.btnYazarGuncelle);
             this.panel2.Controls.Add(this.btnYazarEkle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1561, 83);
+            this.panel2.Size = new System.Drawing.Size(1169, 67);
             this.panel2.TabIndex = 0;
+            // 
+            // btnYazarSil
+            // 
+            this.btnYazarSil.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnYazarSil.Location = new System.Drawing.Point(335, 0);
+            this.btnYazarSil.Margin = new System.Windows.Forms.Padding(2);
+            this.btnYazarSil.Name = "btnYazarSil";
+            this.btnYazarSil.Size = new System.Drawing.Size(173, 67);
+            this.btnYazarSil.TabIndex = 2;
+            this.btnYazarSil.Text = "Seçili Kaydı Sil";
+            this.btnYazarSil.UseVisualStyleBackColor = true;
+            // 
+            // btnYazarGuncelle
+            // 
+            this.btnYazarGuncelle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnYazarGuncelle.Location = new System.Drawing.Point(151, 0);
+            this.btnYazarGuncelle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnYazarGuncelle.Name = "btnYazarGuncelle";
+            this.btnYazarGuncelle.Size = new System.Drawing.Size(184, 67);
+            this.btnYazarGuncelle.TabIndex = 1;
+            this.btnYazarGuncelle.Text = "Seçili Kaydı Güncelle";
+            this.btnYazarGuncelle.UseVisualStyleBackColor = true;
             // 
             // btnYazarEkle
             // 
             this.btnYazarEkle.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnYazarEkle.Location = new System.Drawing.Point(0, 0);
+            this.btnYazarEkle.Margin = new System.Windows.Forms.Padding(2);
             this.btnYazarEkle.Name = "btnYazarEkle";
-            this.btnYazarEkle.Size = new System.Drawing.Size(201, 83);
+            this.btnYazarEkle.Size = new System.Drawing.Size(151, 67);
             this.btnYazarEkle.TabIndex = 0;
             this.btnYazarEkle.Text = "Yazar Ekle";
             this.btnYazarEkle.UseVisualStyleBackColor = true;
             this.btnYazarEkle.Click += new System.EventHandler(this.btnYazarEkle_Click);
             // 
-            // btnYazarGuncelle
+            // tbKategori
             // 
-            this.btnYazarGuncelle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnYazarGuncelle.Location = new System.Drawing.Point(201, 0);
-            this.btnYazarGuncelle.Name = "btnYazarGuncelle";
-            this.btnYazarGuncelle.Size = new System.Drawing.Size(245, 83);
-            this.btnYazarGuncelle.TabIndex = 1;
-            this.btnYazarGuncelle.Text = "Seçili Kaydı Güncelle";
-            this.btnYazarGuncelle.UseVisualStyleBackColor = true;
+            this.tbKategori.Location = new System.Drawing.Point(4, 54);
+            this.tbKategori.Margin = new System.Windows.Forms.Padding(2);
+            this.tbKategori.Name = "tbKategori";
+            this.tbKategori.Size = new System.Drawing.Size(1173, 501);
+            this.tbKategori.TabIndex = 2;
+            this.tbKategori.Text = "Kategori Yönetimi";
+            this.tbKategori.UseVisualStyleBackColor = true;
             // 
-            // btnYazarSil
+            // tbKullanici
             // 
-            this.btnYazarSil.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnYazarSil.Location = new System.Drawing.Point(446, 0);
-            this.btnYazarSil.Name = "btnYazarSil";
-            this.btnYazarSil.Size = new System.Drawing.Size(231, 83);
-            this.btnYazarSil.TabIndex = 2;
-            this.btnYazarSil.Text = "Seçili Kaydı Sil";
-            this.btnYazarSil.UseVisualStyleBackColor = true;
-            // 
-            // dtgYazarlar
-            // 
-            this.dtgYazarlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgYazarlar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgYazarlar.Location = new System.Drawing.Point(3, 86);
-            this.dtgYazarlar.Name = "dtgYazarlar";
-            this.dtgYazarlar.RowHeadersWidth = 51;
-            this.dtgYazarlar.RowTemplate.Height = 24;
-            this.dtgYazarlar.Size = new System.Drawing.Size(1561, 541);
-            this.dtgYazarlar.TabIndex = 1;
+            this.tbKullanici.Location = new System.Drawing.Point(4, 54);
+            this.tbKullanici.Margin = new System.Windows.Forms.Padding(2);
+            this.tbKullanici.Name = "tbKullanici";
+            this.tbKullanici.Size = new System.Drawing.Size(1173, 501);
+            this.tbKullanici.TabIndex = 3;
+            this.tbKullanici.Text = "Kullanıcı Yönetimi";
+            this.tbKullanici.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1575, 688);
+            this.ClientSize = new System.Drawing.Size(1181, 559);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tbKitap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgKitaplar)).EndInit();
@@ -315,8 +346,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tbYazar.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgYazarlar)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

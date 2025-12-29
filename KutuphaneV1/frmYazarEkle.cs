@@ -17,10 +17,10 @@ namespace KutuphaneV1
 
         YazarDAL yazarDal = new YazarDAL();
 
-        public frmYazarEkle()
+        public frmYazarEkle(YazarDAL yazarDAL)
         {
             InitializeComponent();
-           
+            yazarDal = yazarDAL;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -37,6 +37,8 @@ namespace KutuphaneV1
             };
 
             yazarDal.Ekle(yazar);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void frmYazarEkle_Load(object sender, EventArgs e)
