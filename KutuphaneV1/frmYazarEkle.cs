@@ -16,11 +16,14 @@ namespace KutuphaneV1
     {
 
         YazarDAL yazarDal = new YazarDAL();
+        int _yazarid;
+        Yazar _yazar;
 
-        public frmYazarEkle(YazarDAL yazarDAL)
+        public frmYazarEkle( Yazar yazar)
         {
+            _yazar = yazar;
             InitializeComponent();
-            yazarDal = yazarDAL;
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -43,7 +46,9 @@ namespace KutuphaneV1
 
         private void frmYazarEkle_Load(object sender, EventArgs e)
         {
-           
+          txtYazarAdi.Text= _yazar.Adi;
+          txtYazarSoyadi.Text= _yazar.Soyadi; 
+          _yazarid= _yazar.Id;    
         }
     }
 }

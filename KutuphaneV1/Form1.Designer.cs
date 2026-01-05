@@ -296,6 +296,7 @@
             this.btnYazarGuncelle.TabIndex = 1;
             this.btnYazarGuncelle.Text = "Seçili Kaydı Güncelle";
             this.btnYazarGuncelle.UseVisualStyleBackColor = true;
+            this.btnYazarGuncelle.Click += new System.EventHandler(this.btnYazarGuncelle_Click);
             // 
             // btnYazarEkle
             // 

@@ -41,5 +41,14 @@ namespace KutuphaneV1.DataAccess
             _context.conn().Close();
             return dt;
         }
+        public void update(Yazar yazar) {
+            String sorgu="UPDATE yazarlar SET Adi=@Adi,Soyadi=@Soyadi WHERE Id=@Id";
+            MySqlCommand komut=new MySqlCommand(sorgu,_context.conn());
+            komut.Parameters.AddWithValue("@Adi",yazar.Adi);
+            komut.Parameters.AddWithValue("@Soyadi",yazar.Soyadi);
+            komut.Parameters.AddWithValue("@Id",yazar.Id);
+            komut.ExecuteNonQuery();
+            _context.conn().Close();
+        }
     }
 }

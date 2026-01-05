@@ -158,6 +158,7 @@
     <Compile Include="frmYazarEkle.Designer.cs">
       <DependentUpon>frmYazarEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmYazarGuncelle.cs" />
     <Compile Include="KitapEkle.cs">
       <SubType>Form</SubType>
     </Compile>
